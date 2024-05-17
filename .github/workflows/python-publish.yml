@@ -25,15 +25,22 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.x'
+        python-version: '3.7'
     - name: Upgrade pip
       run: python -m pip install --upgrade pip
     - name: Install dependencies
       run:  pip install twine wheel setuptools -U
+    - name: Configure PyPI access
+      env:
+          PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+      run: |
+          cat > &#126;/.pypirc <<EOF
+          [pypi]
+          repository: https://upload.pypi.org/legacy/
+          username: __token__
+          password: $PYPI_API_TOKEN
+          EOF
     - name: Build package
       run: python setup.py sdist bdist_wheel
     - name: Publish package
       run: twine upload dist/*
-      env:
-        user: __token__
-        password: ${{ secrets.PYPI_API_TOKEN }}
