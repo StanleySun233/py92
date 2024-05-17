@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="py92",  # 包的名称
-    version="1.0.1",  # 包的版本
+    version="1.0.2",  # 包的版本
     author="Stanley SUN",  # 作者名称
     author_email="stanleysun233@163.com",  # 作者邮箱
     description="Python Packages for Labeling(985/211/双一流/本科) Schools in China",  # 简短描述
