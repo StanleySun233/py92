@@ -2,4 +2,5 @@
 .DS_Store
 .idea
 build
+dist
 py92.egg-info
