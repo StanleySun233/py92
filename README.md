@@ -20,6 +20,10 @@ or
 ```shell
 pip install git+https://github.com/stanleysun233/py92.git
 ```
+or
+```shell
+pip install https://github.com/StanleySun233/py92/raw/main/dist/py92-1.0.1-py3-none-any.whl
+```
 
 本库仅依赖`pandas`。
 
