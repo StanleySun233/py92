@@ -29,6 +29,10 @@ pip install py92
 ```
 or
 ```shell
+pip instlal py92 -U
+```
+or
+```shell
 pip install git+https://github.com/stanleysun233/py92.git
 ```
 
