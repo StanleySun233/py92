@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="py92",  # 包的名称
-    version="1.0.2",  # 包的版本
+    version="1.0.3",  # 包的版本
     author="Stanley SUN",  # 作者名称
     author_email="stanleysun233@163.com",  # 作者邮箱
     description="Python Packages for Labeling(985/211/双一流/本科) Schools in China",  # 简短描述
@@ -20,7 +20,8 @@ setup(
     ],
     python_requires='>=3.5',  # 依赖的Python版本
     package_data={
-        'py92': ['cn_schools.csv'],
+        'py92': ['cn_schools.csv',
+                 'qs2024.csv'],
     },
     install_requires=[
         "pandas"

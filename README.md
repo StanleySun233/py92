@@ -6,13 +6,18 @@
 * 本科
 * 民办
 
-# 下版本(v1.0.3)目标
-* 增加**英文**学校信息
-* 考虑是否添加一二本属性（有争议）
-* 准备开发[QS, USNEWS, 泰晤士]TOP1000院校信息表
+# 下版本(v1.0.4)目标
+- [ ] 增加**英文**学校信息
+- [ ] 考虑是否添加一二本属性（有争议）
+- [ ] 准备开发[QS, USNEWS, 泰晤士]TOP1000院校信息表
+  * [x] QS2024 实际获取QSTOP1500
+  * [ ] USNEWS
+  * [ ] 泰晤士
+- [x] 自动推送pypi
 
 # 数据来源
-[大学生必备网](https://www.dxsbb.com/news/list_88.html) -> [cn_schools.csv](./data/cn_schools.csv)
+国内院校：[大学生必备网](https://www.dxsbb.com/news/list_88.html) -> [cn_schools.csv](./data/cn_schools.csv)
+QS2024：[QS2024](https://www.qschina.cn/university-rankings/world-university-rankings/2024)
 
 如果学校类型有误、遗漏学校，欢迎提交issue。
 
@@ -24,10 +29,6 @@ pip install py92
 or
 ```shell
 pip install git+https://github.com/stanleysun233/py92.git
-```
-or
-```shell
-pip install https://github.com/StanleySun233/py92/raw/main/dist/py92-1.0.1-py3-none-any.whl
 ```
 
 本库仅依赖`pandas`。
@@ -113,7 +114,15 @@ print(py92.get_label("上海海事大学"))
 # {'name': '上海海事大学', '985': 0, '211': 0, '双一流': 0, '本科': 1, '公办': 1}
 ```
 
-9. `is_[xxx]s`
+9. `get_qs`
+返回学校的qs排名，选填参数`year`，默认为2024。
+
+```python
+print(py92.get_qs("新加坡国立大学"))
+8
+```
+
+10. `is_[xxx]s`
 返回学校组是否属于**xxx**。
 输入：`[name1, name2, name3]`
 ```python

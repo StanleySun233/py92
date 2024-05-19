@@ -66,3 +66,11 @@ def get_label(name):
 
 def get_labels(names):
     return py92utils.get_labels(names)
+
+
+def get_qs(name):
+    return py92utils.get_qs(name)
+
+
+def get_qss(names):
+    return py92utils.get_qss(names)
